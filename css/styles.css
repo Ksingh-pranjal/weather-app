@@ -1,0 +1,448 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================= */
+/* VARIABLES */
+/* ============================= */
+
+:root {
+  --neutral-900: hsl(243, 96%, 9%);
+  --neutral-800: hsl(243, 27%, 20%);
+  --neutral-700: hsl(243, 23%, 24%);
+  --neutral-300: hsl(240, 6%, 70%);
+  --neutral-200: hsl(250, 6%, 84%);
+  --white: hsl(0, 0%, 100%);
+
+  --blue-500: hsl(233, 67%, 56%);
+  --blue-700: hsl(248, 70%, 36%);
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+/* ============================= */
+/* BASE */
+/* ============================= */
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--neutral-900);
+  color: var(--white);
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-heading {
+  text-align: center;
+  margin: 1rem 0 2rem;
+}
+
+.unit-switcher select {
+  background: var(--neutral-700);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+}
+
+/* ============================= */
+/* SEARCH */
+/* ============================= */
+
+.search-section {
+  grid-column: 1 / -1;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--neutral-700);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  width: 350px;
+}
+
+.search-box img {
+  width: 18px;
+  margin-right: 0.5rem;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+}
+
+.search-form button {
+  padding: 0.8rem 1.4rem;
+  background: var(--blue-500);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* MAIN GRID */
+/* ============================= */
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* ============================= */
+/* LEFT COLUMN */
+/* ============================= */
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ============================= */
+/* CURRENT WEATHER */
+/* ============================= */
+
+.weather-card {
+  background: url("../assets/images/bg-today-large.svg") no-repeat center/cover;
+  padding: 1.5rem 1.5rem; /* reduced */
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 300px; /* controlled height */
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+/* ============================= */
+/* METRICS */
+/* ============================= */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.metric-card {
+  background: var(--neutral-800);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.metric-label {
+  color: var(--neutral-300);
+  font-size: 0.85rem;
+}
+
+.metric-value {
+  font-size: 1.2rem;
+}
+
+/* ============================= */
+/* DAILY FORECAST */
+/* ============================= */
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.day-name {
+  text-align: center;
+  color: var(--neutral-200);
+}
+
+.forecast-icon {
+  width: 40px;
+  margin: auto;
+}
+
+.temp-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.temp-min {
+  color: var(--neutral-300);
+}
+
+/* ============================= */
+/* HOURLY */
+/* ============================= */
+
+.hourly-forecast {
+  background: var(--neutral-800);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  align-self: start;
+}
+
+.hourly-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.hourly-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hourly-container .metric-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hour-left {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hour-icon {
+  width: 26px;
+}
+
+/* ============================= */
+/* DROPDOWN */
+/* ============================= */
+
+#day-select {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid var(--neutral-700);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.8rem;
+}
+
+#day-select option {
+  background: var(--neutral-800);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.app-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--neutral-300);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .weather-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .forecast-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.location {
+  font-size: 1.8rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--neutral-200);
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* reduced from 2rem */
+}
+
+.metric-card {
+  padding: 0.8rem;
+}
+
+.forecast-container {
+  gap: 0.7rem;
+}
+
+.app-logo{
+  height: 32px;
+  width: auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* UNIT SWITCHER */
+
+.unit-switcher {
+  position: relative;
+}
+
+/* trigger button */
+.unit-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.unit-icon {
+  width: 18px;
+}
+
+.dropdown-icon {
+  width: 14px;
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+/* dropdown panel */
+.unit-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 220px;
+  background: var(--neutral-800);
+  border-radius: var(--radius-md);
+  padding: 0.8rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 10;
+}
+
+/* show dropdown */
+.unit-dropdown.active {
+  display: flex;
+}
+
+/* title */
+.dropdown-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* section labels */
+.dropdown-label {
+  font-size: 0.75rem;
+  color: var(--neutral-300);
+  margin-top: 0.5rem;
+}
+
+/* options */
+.dropdown-option {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* hover */
+.dropdown-option:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* active selected */
+.dropdown-option.active {
+  background: rgba(255,255,255,0.08);
+}
+
+/* tick */
+.check {
+  font-size: 0.8rem;
+}

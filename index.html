@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Pranjal Singh</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;500;600;700&family=Bricolage+Grotesque:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+
+        <!-- ==================HEADER==================-->
+        <header class="app-header">
+            <div class="header-top">
+                <img src="./assets/images/logo.svg" alt="Weather Now logo" class="app-logo">
+
+                <div class="unit-switcher">
+
+                    <div class="unit-trigger" id="unit-trigger">
+                        <img src="./assets/images/icon-units.svg" class="unit-icon">
+                        <span>Units</span>
+                        <img src="./assets/images/icon-dropdown.svg" class="dropdown-icon">
+                    </div>
+
+                    <div class="unit-dropdown" id="unit-dropdown">
+
+                        <p class="dropdown-title">Switch to Imperial</p>
+
+                        <p class="dropdown-label">Temperature</p>
+                        <div class="dropdown-option active" data-unit="metric">
+                        Celsius (°C)
+                        <span class="check">✓</span>
+                        </div>
+
+                        <div class="dropdown-option" data-unit="imperial">
+                        Fahrenheit
+                        </div>
+
+                        <p class="dropdown-label">Wind Speed</p>
+                        <div class="dropdown-option active" data-wind="kmh">
+                        km/h
+                        <span class="check">✓</span>
+                        </div>
+
+                        <div class="dropdown-option" data-wind="mph">
+                        mph
+                        </div>
+
+                        <p class="dropdown-label">Precipitation</p>
+                        <div class="dropdown-option active" data-precip="mm">
+                        Millimeters (mm)
+                        <span class="check">✓</span>
+                        </div>
+
+                        <div class="dropdown-option" data-precip="inch">
+                        Inches (in)
+                        </div>
+
+                    </div>
+
+                    </div>
+            </div>
+            <h1 class="app-heading">How's the sky looking today?</h1>
+        </header>
+
+        <!--================ MAIN ========================-->
+        <main>
+
+            <!--=========== Search Section ===========-->
+            <section class="search-section">
+                <div class="container">
+                    <form class="search-form" id="search-form">
+    
+                        <div class="search-box">
+                            <img src="./assets/images/icon-search.svg" alt="search icon">
+                            <input 
+                                type="text"
+                                id="city-input"
+                                placeholder="Search for a place..."
+                                required
+                            >
+                        </div>
+
+                        <button type="submit">Search</button>
+
+                    </form>
+                </div>
+            </section>
+            <div class="left-column">
+            <!--========Current Weather Section=============-->
+            <section class="current-weather">
+                <div class="container">
+                    <div class="weather-card">
+
+                        <div class="weather-info">
+                            <p class="location" id="location">City, Country</p>
+                            <p class="date" id="date">Day, Date</p>
+                        </div>
+
+                        <div class="weather-main">
+                            <img 
+                                src="" 
+                                alt="Weather Icon"
+                                class="weather-icon"
+                                id="weather-icon"
+                            >
+                            <p class="temperature" id="temperature">--°</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==== Weather Metrics Section ===-->
+            <section class="weather-metrics">
+                <div class="container metrics-grid">
+                    <div class="metric-card">
+                        <p class="metric-label">Feels Like</p>
+                        <p class="metric-value" id="feels-like">--°</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-label">Humidity</p>
+                        <p class="metric-value" id="humidity">--%</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-label">Wind</p>
+                        <p class="metric-value" id="wind-speed">--</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-label">Precipitation</p>
+                        <p class="metric-value" id="precipitation">--</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==============Daily Forecast Section ===============-->
+            <section class="daily-forecast">
+                <div class="container">
+                    <h3>Daily Forecast</h3>
+
+                    <!--JS will dynamically generate forecast cards here-->
+                    <div class="forecast-container" id="daily-forecast-container"></div>
+                </div>       
+            </section>
+        </div>
+            <!--=============Hourly Forecast Section=============-->
+            <section class="hourly-forecast">
+                <div class="container">
+                    <div class="hourly-header">
+                        <h3>Hourly Forecast</h3>
+                        <select id="day-select">
+                            <!--options will be generated dynamically-->
+                        </select>
+                    </div>
+
+                    <!--JS will generate hourly items here-->
+                    <div class="hourly-container" id="hourly-forecast-container"></div>
+                </div>
+            </section>
+        </main>
+
+        <!--===============FOOTER=======================-->
+        <footer class="app-footer">
+            <p>Built with ❤️ using Open-Meteo API</p>
+        </footer>
+
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
