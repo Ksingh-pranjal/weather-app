@@ -66,7 +66,7 @@ cd weather-app
 
 ## 🌐 Live Demo
 
-👉 (Add your GitHub Pages link here after deployment)
+https://ksingh-pranjal.github.io/weather-app/
 
 ---
 
